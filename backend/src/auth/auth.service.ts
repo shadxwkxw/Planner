@@ -33,6 +33,18 @@ export class AuthService {
     return { user, ...tokens }
   }
 
+  async getNewTokens(refreshToken:string) {
+    const result = await this.jwt.verifyAsync(refreshToken)
+
+    if (!result) throw new UnauthorizedException('Invalid refresh token')
+    
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { ...user } = await this.userService.getById(result.id)
+
+    const tokens = this.issuerTokens(user.id )
+    return { user, ...tokens }
+  }
+
   private issuerTokens(userId:string) {
     const data = {id:userId}
 
