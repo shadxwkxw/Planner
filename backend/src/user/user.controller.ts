@@ -1,5 +1,4 @@
 import { Controller, Put, Body, UsePipes, HttpCode, ValidationPipe, Get } from '@nestjs/common';
-import { AuthService } from 'src/auth/auth.service';
 import { CurrentUser } from 'src/auth/decorators/user.decorator';
 import { UserService } from './user.service';
 import { Auth } from 'src/auth/decorators/auth.decorator';
