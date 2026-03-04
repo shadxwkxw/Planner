@@ -20,3 +20,6 @@ export interface IAuthResponse {
   accessToken: string
   user: IUser
 }
+
+// тип для формы пользователя с 6 полями
+export type TypeUserForm = Omit<IUser, 'id'> & { password?: string}
