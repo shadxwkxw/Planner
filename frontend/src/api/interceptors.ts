@@ -25,7 +25,7 @@ axiosWithAuth.interceptors.request.use(config => {
 })
 
 // запрос без авторизации
-axiosClassic.interceptors.response.use(
+axiosWithAuth.interceptors.response.use(
   config => config,
   async error => {
     const originalRequest = error.config
