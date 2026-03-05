@@ -8,7 +8,7 @@ async function bootstrap() {
   app.setGlobalPrefix('api'); // Устанавливаем глобальный префикс для всех маршрутов
   app.use(cookieParser()); // Подключаем middleware для парсинга cookies
   app.enableCors({
-    origin: 'http://localhost:3001', // Разрешаем запросы с этого происхождения
+    origin: 'http://localhost:3000', // Разрешаем запросы с этого происхождения
     credentials: true, // Разрешаем отправку cookies
     exposedHeaders: ['Set-Cookie'], // Разрешаем клиенту видеть заголовок Set-Cookie
   })
